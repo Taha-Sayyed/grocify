@@ -62,11 +62,13 @@ export default function SignInScreen() {
                     style={{ width: 20, height: 20 }}
                   />
                 </View>
-                <Text className="ml-3 flex-1 text-lg  font-semibold text-card-foreground">
+
+                <Text className="ml-3 flex-1 text-lg font-semibold text-card-foreground">
                   {isGoogleClicked ? "Connecting Google..." : "Continue with Google"}
                 </Text>
+
                 <FontAwesome name="angle-right" size={18} color="#5f6e66" />
-              </Pressable>
+          </Pressable>
               
               <Pressable
                 className={`mb-3 h-14 flex-row items-center rounded-2xl border border-border bg-card px-4 active:opacity-90 ${
