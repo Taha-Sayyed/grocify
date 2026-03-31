@@ -6,6 +6,8 @@ import {ThemeProvider, DarkTheme, DefaultTheme} from "@react-navigation/native"
 import {useColorScheme, View, ActivityIndicator} from 'react-native'
 import { useEffect, type ReactNode } from 'react'
 import * as SplashScreen from 'expo-splash-screen'
+import { KeyboardProvider } from 'react-native-keyboard-controller'
+
 
 SplashScreen.preventAutoHideAsync().catch(() => {})
 
@@ -34,6 +36,7 @@ export default function RootLayout() {
   
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+      <KeyboardProvider>
       <ClerkLoading>
         <View className="flex-1 items-center justify-center">
           <ActivityIndicator size="large" />
@@ -44,6 +47,7 @@ export default function RootLayout() {
           <Stack screenOptions={{headerShown:false}} />
         </ClerkNavigationShell>
       </ClerkLoaded>
+    </KeyboardProvider>
     </ClerkProvider>
   )
 }
